@@ -1,0 +1,265 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        02/02/2021  11:41:21  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE STARTUP.obj, increasing_counter.obj, decreasing_counter.obj TO increasing_counter RAMSIZE (256)
+>> 
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  STARTUP.obj (?C_STARTUP)
+  increasing_counter.obj (INCREASING_COUNTER)
+  decreasing_counter.obj (DECREASING_COUNTER)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  increasing_counter (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     000AH     UNIT         ?DT?INCREASING_COUNTER
+            DATA    0012H     000AH     UNIT         ?DT?MAIN?DECREASING_COUNTER
+            DATA    001CH     000AH     UNIT         ?DT?DECREASING_COUNTER
+            DATA    0026H     000AH     UNIT         _DATA_GROUP_
+            IDATA   0030H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     00A7H     UNIT         ?PR?MAIN?INCREASING_COUNTER
+            CODE    08A7H     00A7H     UNIT         ?PR?MAIN?DECREASING_COUNTER
+            CODE    094EH     008CH     UNIT         ?C_C51STARTUP
+            CODE    09DAH     0019H     UNIT         ?C_INITSEG
+            CODE    09F3H     0013H     UNIT         ?PR?DELAY?INCREASING_COUNTER
+            CODE    0A06H     0013H     UNIT         ?PR?DELAY?DECREASING_COUNTER
+
+
+
+OVERLAY MAP OF MODULE:   increasing_counter (?C_STARTUP)
+
+
+SEGMENT                                DATA_GROUP 
+  +--> CALLED SEGMENT                START    LENGTH
+----------------------------------------------------
+?C_C51STARTUP                        -----    -----
+  +--> ?PR?MAIN?INCREASING_COUNTER
+  +--> ?C_INITSEG
+
+?PR?MAIN?INCREASING_COUNTER          0026H    000AH
+  +--> ?PR?DELAY?INCREASING_COUNTER
+
+
+
+IGNORED SYMBOLS:
+   ARR
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/02/2021  11:41:21  PAGE 2
+
+
+   DELAY
+   MAIN
+
+
+
+SYMBOL TABLE OF MODULE:  increasing_counter (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:094EH         SEGMENT       ?C_C51STARTUP
+  I:0030H         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:0951H         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:094EH         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:094EH         LINE#         133
+  C:0950H         LINE#         134
+  C:0951H         LINE#         135
+  C:0952H         LINE#         136
+  C:0954H         LINE#         185
+  C:0957H         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        INCREASING_COUNTER
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:00A0H         PUBLIC        P2
+  C:09F7H         PUBLIC        delay
+  C:0800H         PUBLIC        main
+  D:0008H         PUBLIC        arr
+  -------         PROC          MAIN
+  -------         DO            
+  D:0026H         SYMBOL        i
+  D:0028H         SYMBOL        j
+  D:002AH         SYMBOL        k
+  D:002CH         SYMBOL        l
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/02/2021  11:41:21  PAGE 3
+
+
+  D:002EH         SYMBOL        m
+  -------         ENDDO         
+  C:0800H         LINE#         28
+  C:0800H         LINE#         29
+  C:0800H         LINE#         31
+  C:0805H         LINE#         32
+  C:0805H         LINE#         33
+  C:080AH         LINE#         34
+  C:080AH         LINE#         35
+  C:080FH         LINE#         36
+  C:080FH         LINE#         37
+  C:0814H         LINE#         38
+  C:0814H         LINE#         39
+  C:0819H         LINE#         40
+  C:0819H         LINE#         41
+  C:081CH         LINE#         42
+  C:0820H         LINE#         44
+  C:0823H         LINE#         45
+  C:0826H         LINE#         46
+  C:082AH         LINE#         47
+  C:082DH         LINE#         48
+  C:0830H         LINE#         49
+  C:0834H         LINE#         51
+  C:0837H         LINE#         52
+  C:083AH         LINE#         53
+  C:083EH         LINE#         54
+  C:0841H         LINE#         55
+  C:0854H         LINE#         56
+  C:0867H         LINE#         59
+  C:087AH         LINE#         61
+  C:0890H         LINE#         62
+  C:08A6H         LINE#         63
+  -------         ENDPROC       MAIN
+  C:09F3H         SYMBOL        L?0028
+  -------         PROC          L?0027
+  -------         ENDPROC       L?0027
+  C:09F3H         SYMBOL        L?0028
+  -------         PROC          DELAY
+  -------         DO            
+  D:0006H         SYMBOL        f
+  -------         ENDDO         
+  C:09F7H         LINE#         64
+  C:09F7H         LINE#         65
+  C:09F7H         LINE#         67
+  C:0A05H         LINE#         68
+  -------         ENDPROC       DELAY
+  -------         ENDMOD        INCREASING_COUNTER
+
+  -------         MODULE        DECREASING_COUNTER
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:00A0H         PUBLIC        P2
+  C:0A0AH         PUBLIC        delay
+  C:08A7H         PUBLIC        main
+  D:001CH         PUBLIC        arr
+  -------         PROC          MAIN
+  -------         DO            
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/02/2021  11:41:21  PAGE 4
+
+
+  D:0012H         SYMBOL        i
+  D:0014H         SYMBOL        j
+  D:0016H         SYMBOL        k
+  D:0018H         SYMBOL        l
+  D:001AH         SYMBOL        m
+  -------         ENDDO         
+  C:08A7H         LINE#         28
+  C:08A7H         LINE#         29
+  C:08A7H         LINE#         31
+  C:08ACH         LINE#         32
+  C:08ACH         LINE#         33
+  C:08B1H         LINE#         34
+  C:08B1H         LINE#         35
+  C:08B6H         LINE#         36
+  C:08B6H         LINE#         37
+  C:08BBH         LINE#         38
+  C:08BBH         LINE#         39
+  C:08C0H         LINE#         40
+  C:08C0H         LINE#         41
+  C:08C3H         LINE#         42
+  C:08C7H         LINE#         44
+  C:08CAH         LINE#         45
+  C:08CDH         LINE#         46
+  C:08D1H         LINE#         47
+  C:08D4H         LINE#         48
+  C:08D7H         LINE#         49
+  C:08DBH         LINE#         51
+  C:08DEH         LINE#         52
+  C:08E1H         LINE#         53
+  C:08E5H         LINE#         54
+  C:08E8H         LINE#         55
+  C:08FBH         LINE#         56
+  C:090EH         LINE#         59
+  C:0921H         LINE#         61
+  C:0937H         LINE#         62
+  C:094DH         LINE#         63
+  -------         ENDPROC       MAIN
+  C:0A06H         SYMBOL        L?0028
+  -------         PROC          L?0027
+  -------         ENDPROC       L?0027
+  C:0A06H         SYMBOL        L?0028
+  -------         PROC          DELAY
+  -------         DO            
+  D:0006H         SYMBOL        f
+  -------         ENDDO         
+  C:0A0AH         LINE#         64
+  C:0A0AH         LINE#         65
+  C:0A0AH         LINE#         67
+  C:0A18H         LINE#         68
+  -------         ENDPROC       DELAY
+  -------         ENDMOD        DECREASING_COUNTER
+
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  ARR
+    MODULE:  decreasing_counter.obj (DECREASING_COUNTER)
+
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/02/2021  11:41:21  PAGE 5
+
+
+    SYMBOL:  DELAY
+    MODULE:  decreasing_counter.obj (DECREASING_COUNTER)
+
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  MAIN
+    MODULE:  decreasing_counter.obj (DECREASING_COUNTER)
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MAIN?DECREASING_COUNTER
+
+*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
+    SYMBOL:  MAIN
+    MODULE:  C:\KEIL\C51\LIB\C51S.LIB (?C_INIT)
+    ADDRESS: 095BH
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 019BH BYTE (20%) *
+******************************************************************************
+
+Program Size: data=49.0 xdata=0 code=540
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  4 ERROR(S)

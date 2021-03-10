@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"Q3.obj" 
+TO "Q3" 
+RAMSIZE(256) 

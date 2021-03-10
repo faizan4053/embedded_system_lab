@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"HEXKEYPAD.obj" 
+TO "Q9" 
+RAMSIZE(256) 

@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"rotate_led.obj" 
+TO "rotate_led" 
+RAMSIZE(256) 

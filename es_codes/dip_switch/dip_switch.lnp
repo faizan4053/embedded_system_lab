@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"dip_switch.obj" 
+TO "dip_switch" 
+RAMSIZE(256) 

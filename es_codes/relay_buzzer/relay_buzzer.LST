@@ -1,0 +1,41 @@
+C51 COMPILER V9.00   RELAY_BUZZER                                                          02/02/2021 11:16:31 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE RELAY_BUZZER
+OBJECT MODULE PLACED IN relay_buzzer.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE relay_buzzer.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          ////relay buzzer------Port P1//////
+   2          #include<reg51.h>                       
+   3          void delay()
+   4          {
+   5   1              int j;
+   6   1              for(j=0;j<10000;j++);
+   7   1      }
+   8          void main()
+   9          { 
+  10   1              char k;                                          //Port 1 is for Relay
+  11   1              P1=0x01;                        //On Buzzer
+  12   1              delay();                //causes delay
+  13   1              for(k=0;k<3;k++)
+  14   1              {
+  15   2                      P1=P1<<1;       //Increases intensity with every shift operation
+  16   2                      delay();
+  17   2              }
+  18   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     37    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

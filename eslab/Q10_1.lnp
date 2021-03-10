@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"7segment.obj" 
+TO "Q10_1" 
+RAMSIZE(256) 

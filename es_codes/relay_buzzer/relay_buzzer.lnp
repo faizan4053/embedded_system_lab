@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"relay_buzzer.obj" 
+TO "relay_buzzer" 
+RAMSIZE(256) 

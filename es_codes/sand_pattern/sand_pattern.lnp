@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"sand_pattern.obj" 
+TO "sand_pattern" 
+RAMSIZE(256) 

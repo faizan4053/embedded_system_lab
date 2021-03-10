@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"decreasing_counter.obj" 
+TO "decreasing_counter" 
+RAMSIZE(256) 

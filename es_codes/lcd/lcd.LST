@@ -1,0 +1,126 @@
+C51 COMPILER V9.00   LCD                                                                   02/02/2021 10:45:43 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE LCD
+OBJECT MODULE PLACED IN lcd.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE lcd.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1                                                                            // CONTROL PORT 2
+   2          //DATA PORT 0
+   3          #include<reg51.h>  // library for 8051 micro controller
+   4          //input  port3
+   5          sbit RS =       P2 ^ 0;         // declares single bit pin P2.0 with RS
+   6          sbit E  =       P2 ^ 1;    // declares single bit pin P2.1 with E
+   7          void instwrt(void)
+   8          {
+   9   1              RS=0;           // register select pin set to 0 for sending instructions
+  10   1              E=1;        // enable is set when moved from high to low
+  11   1              E=0;       
+  12   1      }
+  13          void datawrt(void)
+  14          {
+  15   1              RS=1;            // register select pin set to 1 for sending data
+  16   1              E=1;
+  17   1              E=0;
+  18   1      }
+  19          void delay(void)
+  20          {
+  21   1              unsigned int i;
+  22   1              for(i=0;i<=30000;i++)
+  23   1                      {}
+  24   1      }
+  25          void main(void)
+  26          {
+  27   1      while(1)
+  28   1      {       
+  29   2              P0=0x38;   //0x38 = 2 lines
+  30   2              instwrt();
+  31   2              delay();
+  32   2              P0=0x0E;   // display on 
+  33   2              instwrt();
+  34   2              delay();
+  35   2              P0=0x01;   // clear display screen 
+  36   2              instwrt();
+  37   2              delay();
+  38   2              P0=0x06;   // increement cursor
+  39   2              instwrt();
+  40   2              delay();
+  41   2              P0=0x83;   // line 1 position 3
+  42   2              instwrt();
+  43   2              delay();
+  44   2              P0='A';           // sending data
+  45   2              datawrt();
+  46   2              delay();
+  47   2              P0='D';
+  48   2              datawrt();
+  49   2              delay();
+  50   2              P0='V';
+  51   2              datawrt();
+  52   2              delay();
+  53   2              P0='A';
+  54   2              datawrt();
+  55   2              delay();
+C51 COMPILER V9.00   LCD                                                                   02/02/2021 10:45:43 PAGE 2   
+
+  56   2              P0='N';
+  57   2              datawrt();
+  58   2              delay();
+  59   2              P0='C';
+  60   2              datawrt();
+  61   2              delay();
+  62   2              P0='E';
+  63   2              datawrt();
+  64   2              delay();
+  65   2              /*shift();
+  66   2              delay();*/
+  67   2              P0=0xC3;                         // line 2 position 3
+  68   2              instwrt();
+  69   2              delay();
+  70   2              P0='T';
+  71   2              datawrt();
+  72   2              delay();
+  73   2              P0='E';
+  74   2              datawrt();
+  75   2              delay();
+  76   2              P0='C';
+  77   2              datawrt();
+  78   2              delay();
+  79   2              P0='H';
+  80   2              datawrt();
+  81   2              delay();
+  82   2              P0='N';
+  83   2              datawrt();
+  84   2              delay();
+  85   2              P0='O';
+  86   2              datawrt();
+  87   2              delay();
+  88   2              P0='L';
+  89   2              datawrt();
+  90   2              delay();
+  91   2              P0='O';
+  92   2              datawrt();
+  93   2              delay();
+  94   2              P0='G';
+  95   2              datawrt();
+  96   2              delay();
+  97   2              P0='Y';
+  98   2              datawrt();
+  99   2              delay();
+ 100   2                      }
+ 101   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    218    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
